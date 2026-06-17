@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca - Painel do Leitor</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1>📚 Biblioteca</h1>
+      <div class="header-user">
+        <span>Olá, <strong id="nome-usuario"></strong></span>
+        <span class="badge badge-blue">Leitor</span>
+        <button onclick="logout()" class="btn btn-outline">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="mensagem" class="mensagem hidden"></div>
+
+    <div class="tabs">
+      <button class="tab-nav active" onclick="mostrarSecao('catalogo')">Catálogo de Livros</button>
+      <button class="tab-nav" onclick="mostrarSecao('meus-emprestimos')">Meus Empréstimos</button>
+    </div>
+
+    <section id="secao-catalogo">
+      <div class="section-header">
+        <h2>Catálogo de Livros</h2>
+        <button onclick="carregarLivros()" class="btn btn-outline">↻ Atualizar</button>
+      </div>
+
+      <div class="card">
+        <div class="table-wrapper">
+          <table id="tabela-livros">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Ano</th>
+                <th>Disponível</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-livros">
+              <tr><td colspan="6" class="empty">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="secao-meus-emprestimos" class="hidden">
+      <div class="section-header">
+        <h2>Meus Empréstimos</h2>
+        <button onclick="carregarMeusEmprestimos()" class="btn btn-outline">↻ Atualizar</button>
+      </div>
+
+      <div class="card">
+        <div class="table-wrapper">
+          <table id="tabela-emprestimos">
+            <thead>
+              <tr>
+                <th>Livro</th>
+                <th>Data Empréstimo</th>
+                <th>Previsão Devolução</th>
+                <th>Devolução Real</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-emprestimos">
+              <tr><td colspan="6" class="empty">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/leitor.js"></script>
+</body>
+</html>

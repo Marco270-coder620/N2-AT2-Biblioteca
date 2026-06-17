@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca - Login</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <h1>📚 Biblioteca</h1>
+        <p>Sistema de Gerenciamento de Empréstimos</p>
+      </div>
+
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="mostrarTab('login')">Entrar</button>
+        <button class="tab-btn" onclick="mostrarTab('registro')">Cadastrar</button>
+      </div>
+
+      <div id="mensagem" class="mensagem hidden"></div>
+
+      <form id="form-login" class="auth-form">
+        <h2>Acesse sua conta</h2>
+        <div class="form-group">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" placeholder="Sua senha" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      </form>
+
+      <form id="form-registro" class="auth-form hidden">
+        <h2>Criar conta</h2>
+        <div class="form-group">
+          <label for="reg-nome">Nome completo</label>
+          <input type="text" id="reg-nome" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">E-mail</label>
+          <input type="email" id="reg-email" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-senha">Senha</label>
+          <input type="password" id="reg-senha" placeholder="Mínimo 6 caracteres" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-perfil">Perfil</label>
+          <select id="reg-perfil" required>
+            <option value="">Selecione seu perfil</option>
+            <option value="leitor">Leitor</option>
+            <option value="bibliotecario">Bibliotecário</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/index.js"></script>
+</body>
+</html>
